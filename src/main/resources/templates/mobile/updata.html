@@ -1,0 +1,50 @@
+
+
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title></title>
+
+</head>
+<body><h1>移动端</h1>
+	<form action="/save1" th:object="${user}" method="post">
+		<p>
+			ID<input type="text" th:field="*{id}" id="id" name="id"
+				th:value="${user.id}" />
+		</p>
+		<p>
+			姓名<input type="text" th:field="*{name}" id="name" name="name"
+				th:value="${user.name}" />
+		</p>
+		<p>
+			年龄<input type="text" th:field="*{age}" id="age" name="age"
+				th:value="${user.age}" />
+		</p>
+		<p>
+			性别 <select th:field="*{sex}" id="sex" name="sex"
+				th:value="${user.sex}">
+				<option value="男">男</option>
+				<option value="女">女</option>
+			</select>
+
+		</p>
+		<p>
+			邮箱<input type="text" th:field="*{email}" id="email" name="email"
+				th:value="${user.email}" />
+		</p>
+		<p>
+			好爱 <select th:field="*{hoby}" id="hoby" name="hoby"
+				th:value="${user.hoby}">
+				<option value="下棋">下棋</option>
+				<option value="游泳">游泳</option>
+				<option value="看书">看书</option>
+			</select>
+		</p>
+		<p>
+			<button type="submit">保存</button>
+		</p>
+	</form>
+</body>
+</html>
+

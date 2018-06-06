@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title></title>
+<link rel="stylesheet"
+	href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+<script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+<script
+	src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<div class="row">
+		<div class="col-md-6 col-md-offset-3">
+			<h1>PC端</h1>
+			<h2 th:text="${session}"></h2>
+			<p>
+				<a th:text="#{Chinese}" th:href="@{'/change?lang=中文'}"></a>/
+				<a th:text="#{English}" th:href="@{'/change?lang=英文'}"></a>
+			</p>
+			<table class="table table-bordered table-striped "
+				style="margin: 50px auto;">
+				<thead>
+					<tr>
+						<th th:text="#{ID}"></th>
+						<th th:text="#{name}"></th>
+						<th th:text="#{age}"></th>
+						<th th:text="#{sex}"></th>
+						<th th:text="#{Email}"></th>
+						<th th:text="#{hobby}"></th>
+					</tr>
+				</thead>
+				<tbody>
+
+					<tr th:each="u:${list}">
+						<td th:text="${u.id}"></td>
+						<td th:text="${u.name}"></td>
+						<td th:text="${u.age}"></td>
+						<td th:text="${u.sex}"></td>
+						<td th:text="${u.email}"></td>
+						<td th:text="${u.hoby}"></td>
+						<td><a th:text="#{edit}" th:href="@{'/updata?id='+${u.id}}"></a></td>
+					</tr>
+					<tr>
+						<td colspan="6"><a th:text="#{add}" href="add"></a></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+
+</body>
+</html>

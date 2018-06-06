@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title></title>
+
+</head>
+<body style="text-align: center;"><h1>移动端</h1>
+	<h2 th:text="${session}"></h2>
+	<p>
+	<form action="/change">
+		<select name="lang">
+			<option value="中文">中文</option>
+			<option value="英文">英文</option>
+		</select>
+		<button type="submit">确定</button>
+	</form>
+	</p>
+	<table border="1px" style="margin: 50px auto;">
+		<tbody>
+			<tr>
+				<th>ID</th>
+				<th>姓名</th>
+				<th>年龄</th>
+				<th>性别</th>
+				<th>邮件</th>
+				<th>爱好</th>
+			</tr>
+			<tr th:each="u:${list}">
+				<td th:text="${u.id}"></td>
+				<td th:text="${u.name}"></td>
+				<td th:text="${u.age}"></td>
+				<td th:text="${u.sex}"></td>
+				<td th:text="${u.email}"></td>
+				<td th:text="${u.hoby}"></td>
+				<td><a th:href="@{'/updata?id='+${u.id}}">编辑</a></td>
+			</tr>
+			<tr>
+				<td colspan="6"><a href="form">增加</a></td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+</html>
